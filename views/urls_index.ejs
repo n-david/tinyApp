@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head></head>
+  <body>
+    <% include partials/_header %>
+    <p>
+      <a href="/urls/new">Shorten a URL</a>
+    </p>
+    <table>
+      <tr>
+        <th>Short URL</th>
+        <th>Actual URL</th>
+      </tr>
+    <% for (url in urls) { %>
+      <tr>
+        <td><%= url %></td>
+        <td><a href="/u/<%= url %>"><%= urls[url]%></a></td>
+        <td><a href="/urls/<%= url %>">Edit</a></td>
+        <td>
+          <form method="POST" action="/urls/<%= url %>/delete">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
