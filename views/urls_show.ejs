@@ -4,6 +4,7 @@
   <head></head>
   <body>
     <% include partials/_header %>
+    <h1>Edit/Show</h1>
     ShortURL: <%= shortURL %>
     <form method="POST" action="/urls/<%= shortURL %>/edit">
       <input type="text" name="longURL" placeholder="<%= longURL %>" style="width: 200px">
