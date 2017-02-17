@@ -2,21 +2,21 @@
 
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <title>TinyApp</title>
 </head>
 <body>
-  <a href="/register">Register</a>
-  <% if (!user_current) { %>
-    <a href="/login">Sign in</a>
-    <%= user_current %>
-<!--     <form method="POST" action="/login">
-      <input type="text" name="username">
-      <input type="submit" value="Sign in">
-    </form> -->
+  <% if (!userCurrent) { %>
+    <a href="/register" style="float:right; display:block; padding:10px">Register</a>
+    <a href="/login" style="float:left; display:block; padding:10px">Log In</a>
+    <%= userCurrent %>
   <% } else { %>
     <form method="POST" action="/logout">
-      Hello, <%= user_current['id'] %>
-      <input type="submit" value="Sign out">
+      <div>
+        <h3>Hello, <%= userCurrent['email'] %></h3>
+        <a href="/urls">My Links</a>
+        <input type="submit" value="Sign out" style="float:right; margin-top:-35px; margin-right:15px" class="btn btn-danger">
+      </div>
     </form>
   <% } %>
 </body>

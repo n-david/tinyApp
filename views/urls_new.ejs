@@ -2,13 +2,15 @@
 
 <html lang="en">
   <head></head>
-  <body style="font-size:20px; padding:50px;">
+  <body>
     <% include partials/_header %>
-    <h1>New</h1>
-    <form action="/urls" method="POST" style="margin:150px;">
-      <label for="longURL">Enter a URL:</label>
-      <input name="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
-      <input type="submit" value="Submit">
-    </form>
+    <h1 align="center">New URL</h1></br></br>
+    <div style="text-align:center">
+      <form action="/urls" method="POST">
+        <label for="longURL">Enter a URL</label>
+        <input name="longURL" type="text" name="longURL" placeholder="http://" style="width:300px">
+        <input type="submit" value="Submit" class="btn btn-info">
+      </form>
+    </div>
   </body>
 </html>

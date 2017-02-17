@@ -4,11 +4,25 @@
   <head></head>
   <body>
     <% include partials/_header %>
-    <h1>Log in</h1>
-    <form method="POST" action="/login">
-      <div>Email: <input type="email" name="email"></div>
-      <div>Password: <input type="password" name="password"></div>
-      <input type="submit" value="Register">
+    </br><h1 align="center">Welcome</h1></br>
+    <form method="POST" action="/login" class="form-horizontal container center_div">
+      <div class="form-group">
+        <label for="email" class="control-label col-xs-2">Email</label>
+        <div class="col-xs-7">
+          <input type="email" name="email" class="form-control" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="control-label col-xs-2">Password</label>
+        <div class="col-xs-7">
+          <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+          <input type="submit" value="Log In" class="btn btn-primary">
+        </div>
+      </div>
     </form>
   </body>
 </html>

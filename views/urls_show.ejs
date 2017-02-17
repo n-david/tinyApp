@@ -4,11 +4,16 @@
   <head></head>
   <body>
     <% include partials/_header %>
-    <h1>Edit/Show</h1>
-    ShortURL: <%= shortURL %>
-    <form method="POST" action="/urls/<%= shortURL %>/edit">
-      <input type="text" name="longURL" placeholder="<%= longURL %>" style="width: 200px">
-      <input type="submit" value="Update">
-    </form>
+    <h1 align="center">Edit URL</h1></br></br>
+    <h4 align="center">ShortURL: <%= shortURL %></h4>
+    <div style="text-align:center">
+      <form method="POST" action="/urls/<%= shortURL %>/edit">
+        <input type="text" name="longURL" placeholder="<%= longURL %>" style="width:300px">
+        <input type="submit" value="Update" class="btn btn-info">
+      </form>
+      <form method="POST" action="/urls/<%= shortURL %>/delete">
+        </br><input type="submit" value="Delete" class="btn btn-random btn-sm">
+      </form>
+    </div>
   </body>
 </html>
