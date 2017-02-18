@@ -5,15 +5,31 @@
   <body>
     <% include partials/_header %>
     <h1 align="center">Edit URL</h1></br></br>
-    <h4 align="center">ShortURL: <%= shortURL %></h4>
+    <h4 align="center" style="margin-right:215px">ShortURL: <%= shortURL %></h4>
     <div style="text-align:center">
-      <form method="POST" action="/urls/<%= shortURL %>/edit">
+      <form method="POST" action="/urls/<%= shortURL %>/?_method=PUT">
         <input type="text" name="longURL" placeholder="<%= longURL %>" style="width:300px">
         <input type="submit" value="Update" class="btn btn-info">
       </form>
-      <form method="POST" action="/urls/<%= shortURL %>/delete">
-        </br><input type="submit" value="Delete" class="btn btn-random btn-sm">
+      <form method="POST" action="/urls/<%= shortURL %>?_method=DELETE">
+        </br><input type="submit" value="Delete" class="btn btn-random" style="margin-left:450px; margin-top: -99px">
       </form>
+      <% if (visits === 1) { %>
+        <h4><%= visits %> Visit</h4>
+      <% } else { %>
+        <h4><%= visits %> Visits</h4>
+      <% } %>
+      <% if (uniqueVisits === 1) { %>
+        <h4><%= uniqueVisits %> Unique Visit</h4>
+      <% } else { %>
+        <h4><%= uniqueVisits %> Unique Visits</h4>
+      <% } %>
+      </br></br>
+      <% if (dates !== undefined) { %>
+        <% for (let i = 0; i < dates[Object.keys(dates)[0]].length; i++) { %>
+          <h5 align="center"><%= dates['ids'][i] %> - <%= dates['dates'][i] %></h5>
+        <% } %>
+      <% } %>
     </div>
   </body>
 </html>
